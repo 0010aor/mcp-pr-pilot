@@ -29,7 +29,8 @@ async def serve() -> None:
     @server.call_tool()
     async def call_tool(name, arguments: dict) -> list[TextContent]:
         if name == 'get_pr_description':
-            diff = get_git_diff()
+            branch = arguments.get('branch', 'main')
+            diff = get_git_diff(branch)
             instruction = 'Summarize these changes in natural language for a pull request description.'
             result = GitDiffSummaryResult(diff=diff, instruction=instruction)
             return [TextContent(type='text', text=result.model_dump_json())]

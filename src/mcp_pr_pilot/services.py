@@ -1,11 +1,11 @@
 import subprocess
 
 
-def get_git_diff() -> str:
-    """Runs 'git diff main...' and returns the output as a string."""
+def get_git_diff(branch: str = 'main') -> str:
+    """Runs 'git diff <branch>...' and returns the output as a string."""
     try:
         result = subprocess.run(
-            ['git', 'diff', 'main...'],
+            ['git', 'diff', f'{branch}...'],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,

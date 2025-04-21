@@ -2,9 +2,9 @@ from pydantic import BaseModel
 
 
 class GitDiffSummaryParams(BaseModel):
-    """No parameters needed for git diff summary."""
+    """Parameters for git diff summary."""
 
-    pass
+    branch: str = 'main'
 
 
 class GitDiffSummaryResult(BaseModel):

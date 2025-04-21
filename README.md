@@ -4,10 +4,10 @@ A Model Context Protocol (MCP) server that helps you create pull request (PR) de
 
 ### Available Tools
 
--   `get_pr_description` - Returns the git diff (main...) and a suggested instruction to summarize the changes for a PR description.
-    -   **Input:** No parameters required.
+-   `get_pr_description` - Returns the git diff (`<branch>...`, default: `main`) and a suggested instruction to summarize the changes for a PR description.
+    -   **Input:** Optional `branch` parameter (defaults to `main`).
     -   **Output:** JSON with two fields:
-        -   `diff`: The raw output of `git diff main...`
+        -   `diff`: The raw output of `git diff <branch>...`
         -   `instruction`: A string instructing to "Summarize these changes in natural language for a pull request description."
 
 ## Installation and Running
