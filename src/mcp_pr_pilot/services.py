@@ -1,16 +1,18 @@
 import subprocess
 
+from .diff_types import DiffType
 
-def get_git_diff(branch: str = 'main', repo_path: str = '.', diff_type: str = 'working') -> str:
+
+def get_git_diff(diff_type: DiffType = DiffType.WORKING, branch: str = 'main', repo_path: str = '.') -> str:
     try:
-        if diff_type == 'working':
+        if diff_type == DiffType.WORKING:
+            cmd = ['git', 'diff']
+        elif diff_type == DiffType.BRANCH_COMPARE:
             cmd = ['git', 'diff', f'{branch}...']
-        elif diff_type == 'staged':
+        elif diff_type == DiffType.STAGED:
             cmd = ['git', 'diff', '--cached']
-        elif diff_type == 'committed':
+        elif diff_type == DiffType.COMMITTED:
             cmd = ['git', 'diff', f'{branch}..HEAD']
-        else:
-            return f'Unknown diff_type: {diff_type}'
         result = subprocess.run(
             cmd,
             cwd=repo_path,

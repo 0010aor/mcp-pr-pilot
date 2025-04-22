@@ -21,3 +21,8 @@ class GitDiffCommitResult(BaseModel):
 class GitDiffReviewResult(BaseModel):
     diff: str
     instruction: str
+
+
+class GitDiffDocsResult(BaseModel):
+    diff: str
+    instruction: str

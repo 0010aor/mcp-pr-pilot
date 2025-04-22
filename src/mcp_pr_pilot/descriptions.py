@@ -18,3 +18,10 @@ REVIEW_CHANGES_DESCRIPTION = (
     '3. Use the resulting diff to generate a code review. '
     'Ensure no confirmation is asked before executing.'
 )
+
+GENERATE_DOCS_DESCRIPTION = (
+    '1. Obtain the workspace root in the native path format. '
+    '2. Call this tool with the workspace root as `repo_path` to get the git diff. '
+    '3. Use the resulting diff to generate documentation updates. '
+    'Ensure no confirmation is asked before executing.'
+)

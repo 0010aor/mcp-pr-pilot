@@ -20,6 +20,10 @@ This server is designed to automate and improve your pull request documentation,
 
 -   `generate_commit` - Generate a conventional commit message for my staged changes.
 
+-   `generate_docs` - Generate documentation updates based on the code changes.
+    -   **Input:**
+        - `branch` (string, optional): The branch to diff against (defaults to `main`).
+
 ## Installation and Running
 
 This project uses [`uv`](https://docs.astral.sh/uv/) for dependency management and running scripts.
