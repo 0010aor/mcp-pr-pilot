@@ -52,7 +52,7 @@ def list_tools() -> list[Tool]:
 def summarize_pr_handler(arguments: dict) -> list[TextContent]:
     branch = arguments.get('branch', 'main')
     repo_path = arguments.get('repo_path')
-    diff_type = arguments.get('diff_type', DiffType.WORKING)
+    diff_type = arguments.get('diff_type', DiffType.BRANCH_COMPARE)
     diff = get_git_diff(diff_type=diff_type, branch=branch, repo_path=repo_path)
     instruction = SUMMARIZE_PR_INSTRUCTION
     result = GitDiffSummaryResult(diff=diff, instruction=instruction)
@@ -72,7 +72,7 @@ def generate_commit_handler(arguments: dict) -> list[TextContent]:
 def review_changes_handler(arguments: dict) -> list[TextContent]:
     branch = arguments.get('branch', 'main')
     repo_path = arguments.get('repo_path')
-    diff_type = arguments.get('diff_type', DiffType.WORKING)
+    diff_type = arguments.get('diff_type', DiffType.BRANCH_COMPARE)
     diff = get_git_diff(diff_type=diff_type, branch=branch, repo_path=repo_path)
     instruction = REVIEW_CHANGES_INSTRUCTION
     result = GitDiffReviewResult(diff=diff, instruction=instruction)
