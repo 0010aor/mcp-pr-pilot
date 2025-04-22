@@ -1,5 +1,7 @@
 # MCP Server PR Pilot
 
+<img src="sample.gif" alt="Demo of MCP Server PR Pilot" width="1080" />
+
 A Model Context Protocol (MCP) server that helps you create pull request (PR) descriptions, commit messages, and code reviews based on the actual code changes in your repository. It provides the output of `git diff` and a summarization instruction, making it easy to generate meaningful PR descriptions, commit messages, and reviews using LLMs or other tools.
 
 ### Example PR/Commit/Review Workflow
